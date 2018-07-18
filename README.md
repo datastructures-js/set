@@ -1,6 +1,6 @@
-# Set
+# @datastrucures-js/set
 
-[![build:?](https://travis-ci.org/eyas-ranjous/datatructures-js/set.svg?branch=master)](https://travis-ci.org/eyas-ranjous/datatructures-js/set) 
+[![build:?](https://travis-ci.org/datastructures-js/set.svg?branch=master)](https://travis-ci.org/datastructures-js/set) 
 [![npm](https://img.shields.io/npm/v/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 
