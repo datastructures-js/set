@@ -1,5 +1,5 @@
 /**
- * datastructures-js/Set
+ * datastructures-js/set
  * @class
  * @copyright 2018 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
