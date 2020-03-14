@@ -48,6 +48,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 ## .union(set) 
 applies union with another set and returns a set with all elements of the two.
 
+https://en.wikipedia.org/wiki/Union_(set_theory)
+
 <img width="209" alt="union" src="https://user-images.githubusercontent.com/6517308/76688727-04320000-65f5-11ea-8c71-9f8b0ab9660e.png">
 
 ```js
@@ -60,6 +62,8 @@ const union = set1.union(set2); // {A, B, C, D, E, F}
 ## .intersect(set)
 intersects the set with another set and returns a set with existing elements in both sets.
 
+https://en.wikipedia.org/wiki/Intersection_(set_theory)
+
 <img width="226" alt="intersect" src="https://user-images.githubusercontent.com/6517308/76688730-06945a00-65f5-11ea-9c46-4d332bc073b6.png">
 
 ```js
@@ -68,6 +72,8 @@ const intersect = set1.intersect(set2); // {C, D}
 
 ## .complement(set)
 returns elements in a set and not in the other set relative to their union.
+
+https://en.wikipedia.org/wiki/Complement_(set_theory)
 
 <img width="515" alt="complement" src="https://user-images.githubusercontent.com/6517308/76688734-0bf1a480-65f5-11ea-8e90-7d5c9ba2af66.png">
 
@@ -79,6 +85,8 @@ const set1Complement = set2.complement(set1); // {E, F}
 ## .isSubsetOf(set)
 checks if the set is a subset of another set and returns true if all elements of the set exist in the other set.
 
+https://en.wikipedia.org/wiki/Subset
+
 <img width="159" alt="subset" src="https://user-images.githubusercontent.com/6517308/76688736-0f852b80-65f5-11ea-9a17-f9ad84e72d47.png">
 
 ```js
@@ -89,6 +97,8 @@ console.log(s1.isSubsetOf(s2)); // false
 ## .isSupersetOf(set)
 checks if the set is a superset of another set and returns true if all elements of the other set exist in the set.
 
+https://en.wikipedia.org/wiki/Subset
+
 <img width="159" alt="subset" src="https://user-images.githubusercontent.com/6517308/76688736-0f852b80-65f5-11ea-9a17-f9ad84e72d47.png">
 
 ```js
@@ -98,6 +108,8 @@ console.log(s1.isSupersetOf(s2)); // false
 
 ## .product(set)
 applies cartesian product between two sets.
+
+https://en.wikipedia.org/wiki/Cartesian_product
 
 <img width="228" alt="product" src="https://user-images.githubusercontent.com/6517308/76688737-12801c00-65f5-11ea-81ff-eea4d5fcb0ab.png">
 
