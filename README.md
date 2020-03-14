@@ -11,14 +11,13 @@ extends javascript Set class and implements main operations between two sets.
 * [API](#api)
   * [require](#require)
   * [import](#import)
-  * [Creating a Set](#create-a-set)
-  * [javascript Set class](#javascript-set)
-  * [union](#union)
-  * [intersect](#intersect)
-  * [complement](#complement)
-  * [isSubSetOf](#issubsetof)
-  * [isSuperSetOf](#issupersetof)
-  * [product](#product)
+  * [javascript Set class](#javascript-set-class)
+  * [union](#unionset)
+  * [intersect](#intersectset)
+  * [complement](#complementset)
+  * [isSubSetOf](#issubsetofset)
+  * [isSuperSetOf](#issupersetofset)
+  * [product](#productset)
  * [Build](#build)
  * [License](#license)
 
@@ -39,12 +38,6 @@ const EnhancedSet = require('@datastructures-js/set');
 
 ```js
 import EnhancedSet from '@datastructures-js/set';
-```
-
-### Create a Set
-
-```js
-const set = new EnhancedSet();
 ```
 
 ### javascript Set class
