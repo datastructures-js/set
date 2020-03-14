@@ -56,7 +56,7 @@ const union = set1.union(set2); // {A, B, C, D, E, F}
 ```
 
 ## .intersect(set)
-intersects the set with another set and returns a set with elements from both sets.
+intersects the set with another set and returns a set with existing elements in both sets.
 
 ```js
 const intersect = set1.intersect(set2); // {C, D}
