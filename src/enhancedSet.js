@@ -13,7 +13,7 @@ class EnhancedSet extends Set {
    * https://en.wikipedia.org/wiki/Union_(set_theory)
    *
    * @param {Set} set
-   * @returns {EnhancedSet}
+   * @returns {Set}
    */
   union(set) {
     if (!(set instanceof Set)) {
@@ -29,8 +29,8 @@ class EnhancedSet extends Set {
   /**
    * https://en.wikipedia.org/wiki/Intersection_(set_theory)
    *
-   * @param {object} s - set to intersect with
-   * @returns {object} - resulting set
+   * @param {Set} set
+   * @returns {Set}
    */
   intersect(set) {
     if (!(set instanceof Set)) {
@@ -50,8 +50,8 @@ class EnhancedSet extends Set {
   /**
    * https://en.wikipedia.org/wiki/Complement_(set_theory)
    *
-   * @param {object} s - set to diff from
-   * @returns {object} - resulting set
+   * @param {Set} set
+   * @returns {Set}
    */
   complement(set) {
     if (!(set instanceof Set)) {
@@ -71,7 +71,7 @@ class EnhancedSet extends Set {
   /**
    * https://en.wikipedia.org/wiki/Subset
    *
-   * @param {object} s -  set to check if it contains the set
+   * @param {Set} set
    * @returns {boolean}
    */
   isSubsetOf(set) {
@@ -90,7 +90,7 @@ class EnhancedSet extends Set {
   /**
    * https://en.wikipedia.org/wiki/Subset
    *
-   * @param {object} s -  set to check if it is a child of the set
+   * @param {Set} set
    * @returns {boolean}
    */
   isSupersetOf(set) {
@@ -109,8 +109,8 @@ class EnhancedSet extends Set {
   /**
    * https://en.wikipedia.org/wiki/Cartesian_product
    *
-   * @param {object} s -  set to check if it is a child of the set
-   * @returns {boolean}
+   * @param {Set} set
+   * @returns {Set}
    */
   product(set) {
     if (!(set instanceof Set)) {
