@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-js/set",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "set implementation in javascript",
   "main": "index.js",
   "scripts": {
