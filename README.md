@@ -1,147 +1,126 @@
-# @datastrucures-js/set
+# @datastructures-js/set
 
 [![build:?](https://travis-ci.org/datastructures-js/set.svg?branch=master)](https://travis-ci.org/datastructures-js/set) 
 [![npm](https://img.shields.io/npm/v/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 
-elements data type: number, string, boolean, null, undefined.
+extends javascript Set class and implements main operations between two sets.
 
-## Usage
-```js
-const setFn = require('@datastructures-js/set');
-const set = setFn();
+# Table of Contents
+* [Install](#install)
+* [API](#api)
+  * [require](#require)
+  * [import](#import)
+  * [Creating a Set](#create-a-set)
+  * [javascript Set class](#javascript-set)
+  * [union](#union)
+  * [intersect](#intersect)
+  * [complement](#complement)
+  * [isSubSetOf](#issubsetof)
+  * [isSuperSetOf](#issupersetof)
+  * [product](#product)
+ * [Build](#build)
+ * [License](#license)
+
+## Install
+```sh
+npm install --save @datastructures-js/set
 ```
 
 ## API
 
-**.add(element)** 
+### require
 
-adds an element to the set.
-```javascript
-set.add('A');
-set.add('B');
-set.add('C');
-set.add('D');
-```
-**.isEmpty()** 
-
-checks if the set is empty.
-```javascript
-console.log(set.isEmpty()); // false
+```js
+const EnhancedSet = require('@datastructures-js/set');
 ```
 
-**.contains(element)** 
+### import
 
-checks if the set contains an element
-```javascript
-console.log(set.contains('C')); // true
+```js
+import EnhancedSet from '@datastructures-js/set';
 ```
 
-**.remove(element)** 
+### Create a Set
 
-removes an element from the set.
-```javascript
-set.remove('C');
-console.log(set.contains('C')); // false
+```js
+const set = new EnhancedSet();
 ```
 
-**.size()** 
+### javascript Set class
+It extends the Set class in javascript so it already has all the Set functionality.
 
-returns the number of elements in the set.
-```javascript
-console.log(set.size()); // 3
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+## .union(set) 
+applies union with another set and returns a set with all elements of the two.
+
+```js
+const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
+const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
+
+const union = set1.union(set2); // {A, B, C, D, E, F}
 ```
 
-**.union(set)** 
+## .intersect(set)
+intersects the set with another set and returns a set with elements from both sets.
 
-unions the set with another set and returns the resulting set.
-```javascript
-const set2 = ds.set();
-set2.add('A');
-set2.add('E');
-set2.add('F');
-const unionSet = set.union(set2); // unionSet contains A, B, D, E, F
+```js
+const intersect = set1.intersect(set2); // {C, D}
 ```
 
-**.intersect(set)** 
+## .complement(set)
+returns elements in a set and not in the other set relative to their union.
 
-intersects the set with another set and returns the resulting set.
-```javascript
-const set2 = ds.set();
-set2.add('A');
-set2.add('E');
-set2.add('F');
-// set contains A, B, D
-const intersectSet = set.intersect(set2); // intersectSet contains A
+```js
+const set2Complement = set1.complement(set2); // {A, B}
+const set1Complement = set2.complement(set1); // {E, F}
 ```
 
-**.diff(set)** 
+## .isSubsetOf(set)
 
-returns the diff set between the set and another set.
-```javascript
-const set2 = ds.set();
-set2.add('A');
-set2.add('E');
-set2.add('F');
-// set contains A, B, D
-const diffSet = set.diff(set2); // diffSet contains B, D
-```
+checks if the set is a subset of another set and returns true if all elements of the set exist in the other set.
 
-**.isSubsetOf(set)** 
-
-checks if the set is a subset of another set
-```javascript
-const s1 = ds.set();
-s1.add('B');
-s1.add('G');
-s1.add('D');
-
-const s2 = ds.set();
-s2.add('A');
-s2.add('G');
-s2.add('B');
-s2.add('G');
-s2.add('D');
-
-console.log(s2.isSubsetOf(s1)); // false
+```js
+console.log(s1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
 console.log(s1.isSubsetOf(s2)); // true
 ```
 
-**.isSupersetOf(set)** 
+## .isSupersetOf(set) 
 
-checks if the set is a subset of another set
-```javascript
-const s1 = ds.set();
-s1.add('B');
-s1.add('G');
-s1.add('D');
+checks if the set is a superset of another set and returns true if all elements of the other set exist in the set.
 
-const s2 = ds.set();
-s2.add('A');
-s2.add('G');
-s2.add('B');
-s2.add('G');
-s2.add('D');
-
-console.log(s2.isSupersetOf(s1)); // true
-console.log(s1.isSupersetOf(s2)); // true
+```js
+console.log(s1.isSupersetOf(new Set['A', 'B'])); // true
+console.log(s1.isSupersetOf(s2)); // false
 ```
 
-**.toArray()** 
+## .product(set)
+applies cartesian product between two sets.
 
-converts the set to an array.
-```javascript
-console.log(set.toArray()); // ['A', 'B', 'D']
+```js
+console.log(set1.product(set2));
+/*
+EnhancedSet {
+  'A,C',
+  'A,D',
+  'A,E',
+  'A,F',
+  'B,C',
+  'B,D',
+  'B,E',
+  'B,F',
+  'C,C',
+  'C,D',
+  'C,E',
+  'C,F',
+  'D,C',
+  'D,D', 
+  'D,E',
+  'D,F'
+}
+*/
 ```
-
-**.clear()** 
-
-clears the set
-```javascript
-set.clear(); // set is empty
-console.log(set.size()); // 0  
-```
-
 
 ## Build
 ```
