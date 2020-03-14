@@ -83,7 +83,7 @@ checks if the set is a subset of another set and returns true if all elements of
 
 ```js
 console.log(s1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
-console.log(s1.isSubsetOf(s2)); // true
+console.log(s1.isSubsetOf(s2)); // false
 ```
 
 ## .isSupersetOf(set)
