@@ -52,6 +52,21 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
 
 <img width="209" alt="union" src="https://user-images.githubusercontent.com/6517308/76688727-04320000-65f5-11ea-8c71-9f8b0ab9660e.png">
 
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n) : n is the number of elements in the set</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -67,6 +82,21 @@ intersects the set with another set and returns a set with existing elements in 
 https://en.wikipedia.org/wiki/Intersection_(set_theory)
 
 <img width="226" alt="intersect" src="https://user-images.githubusercontent.com/6517308/76688730-06945a00-65f5-11ea-9c46-4d332bc073b6.png">
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n) : n is the number of elements in the set</td>
+ </tr>
+</table>
 
 #### Example
 
@@ -95,6 +125,21 @@ https://en.wikipedia.org/wiki/Subset
 
 <img width="159" alt="subset" src="https://user-images.githubusercontent.com/6517308/76688736-0f852b80-65f5-11ea-9a17-f9ad84e72d47.png">
 
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n) : n is the number of elements in the set</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -109,6 +154,21 @@ https://en.wikipedia.org/wiki/Subset
 
 <img width="159" alt="subset" src="https://user-images.githubusercontent.com/6517308/76688736-0f852b80-65f5-11ea-9a17-f9ad84e72d47.png">
 
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n) : n is the number of elements in the set</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -122,6 +182,21 @@ applies cartesian product between two sets.
 https://en.wikipedia.org/wiki/Cartesian_product
 
 <img width="228" alt="product" src="https://user-images.githubusercontent.com/6517308/76688737-12801c00-65f5-11ea-81ff-eea4d5fcb0ab.png">
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n * m) : n is the number of elements in the set, m is the number of elements of the second set</td>
+ </tr>
+</table>
 
 #### Example
 
