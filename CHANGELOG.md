@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2020-04-03
+### Fixed
+- README & jsdoc
+
 ## [2.0.0] - 2020-03-14
 ### Changed
 - extends existing javascript `Set` class.
