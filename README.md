@@ -194,7 +194,7 @@ https://en.wikipedia.org/wiki/Cartesian_product
   <th>runtime</th>
  </tr>
  <tr>
-  <td>O(n * m) : n is the number of elements in the set, m is the number of elements of the second set</td>
+  <td>O(n*m) : n is the number of elements in the set, m is the number of elements of the second set</td>
  </tr>
 </table>
 
