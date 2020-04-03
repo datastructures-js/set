@@ -1,23 +1,26 @@
 /**
- * datastructures-js/set
+ * @datastructures-js/set
  * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
  */
 
 /**
  * @class EnhancedSet
- * @extends Set - REF: https://mzl.la/2QajnHr
+ * @extends Set - ES6 Set REF: https://mzl.la/2QajnHr
+ * implements main set operations
  */
 class EnhancedSet extends Set {
   /**
-   * https://en.wikipedia.org/wiki/Union_(set_theory)
-   *
+   * @public
+   * Union: https://en.wikipedia.org/wiki/Union_(set_theory)
+   * returns a set of all elements of the set and another set
    * @param {Set} set
    * @returns {Set}
+   * @throws {Error}
    */
   union(set) {
     if (!(set instanceof Set)) {
-      throw new Error('union expects an instance of Set');
+      throw new Error('.union expects an instance of Set');
     }
 
     const result = new EnhancedSet();
@@ -27,10 +30,12 @@ class EnhancedSet extends Set {
   }
 
   /**
-   * https://en.wikipedia.org/wiki/Intersection_(set_theory)
-   *
+   * @public
+   * Intersection: https://en.wikipedia.org/wiki/Intersection_(set_theory)
+   * returns the common elements between the set and another set
    * @param {Set} set
    * @returns {Set}
+   * @throws {Error}
    */
   intersect(set) {
     if (!(set instanceof Set)) {
@@ -48,8 +53,9 @@ class EnhancedSet extends Set {
   }
 
   /**
-   * https://en.wikipedia.org/wiki/Complement_(set_theory)
-   *
+   * @public
+   * Complement: https://en.wikipedia.org/wiki/Complement_(set_theory)
+   * returns the elements in the set that are not in another set
    * @param {Set} set
    * @returns {Set}
    */
@@ -69,8 +75,9 @@ class EnhancedSet extends Set {
   }
 
   /**
-   * https://en.wikipedia.org/wiki/Subset
-   *
+   * @public
+   * Subset: https://en.wikipedia.org/wiki/Subset
+   * checks if the set is a subset of another set
    * @param {Set} set
    * @returns {boolean}
    */
@@ -88,8 +95,9 @@ class EnhancedSet extends Set {
   }
 
   /**
-   * https://en.wikipedia.org/wiki/Subset
-   *
+   * @public
+   * Subset: https://en.wikipedia.org/wiki/Subset
+   * checks if the set is a superset of another set
    * @param {Set} set
    * @returns {boolean}
    */
@@ -107,8 +115,8 @@ class EnhancedSet extends Set {
   }
 
   /**
-   * https://en.wikipedia.org/wiki/Cartesian_product
-   *
+   * @public
+   * Cartesian Product: https://en.wikipedia.org/wiki/Cartesian_product
    * @param {Set} set
    * @returns {Set}
    */
