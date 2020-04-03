@@ -1,7 +1,7 @@
 {
   "name": "@datastructures-js/set",
   "version": "2.0.1",
-  "description": "set implementation in javascript",
+  "description": "Enhanced Set that extends javascript ES6 Set",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"

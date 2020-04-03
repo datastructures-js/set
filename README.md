@@ -67,7 +67,7 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
   <td>O(n+m)
   </td>
   <td>
-    n = number of elements in the first set<br><br>m = number of elements of the second set
+    n = number of elements of the first set<br><br>m = number of elements of the second set
   </td>
  </tr>
 </table>
@@ -101,7 +101,7 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
  </tr>
  <tr>
   <td>O(n)</td>
-  <td>n = number of elements in the set</td>
+  <td>n = number of elements of the set</td>
  </tr>
 </table>
 
@@ -145,7 +145,7 @@ https://en.wikipedia.org/wiki/Subset
  </tr>
  <tr>
   <td>O(n)</td>
-  <td>n = number of elements in the set</td>
+  <td>n = number of elements of the set</td>
  </tr>
 </table>
 
@@ -176,7 +176,7 @@ https://en.wikipedia.org/wiki/Subset
  </tr>
  <tr>
   <td>O(n)</td>
-  <td>n = number of elements in the set</td>
+  <td>n = number of elements of the set</td>
  </tr>
 </table>
 
@@ -209,7 +209,7 @@ https://en.wikipedia.org/wiki/Cartesian_product
   <td>O(n*m)
   </td>
   <td>
-    n = number of elements in the first set<br><br>m = number of elements of the second set
+    n = number of elements of the first set<br><br>m = number of elements of the second set
   </td>
  </tr>
 </table>
