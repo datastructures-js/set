@@ -97,9 +97,11 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
 <table>
  <tr>
   <th>runtime</th>
+  <th>explanation</th>
  </tr>
  <tr>
-  <td>O(n) : n is the number of elements in the set</td>
+  <td>O(n)</td>
+  <td>n = number of elements in the set</td>
  </tr>
 </table>
 
@@ -139,9 +141,11 @@ https://en.wikipedia.org/wiki/Subset
 <table>
  <tr>
   <th>runtime</th>
+  <th>explanation</th>
  </tr>
  <tr>
-  <td>O(n) : n is the number of elements in the set</td>
+  <td>O(n)</td>
+  <td>n = number of elements in the set</td>
  </tr>
 </table>
 
@@ -168,9 +172,11 @@ https://en.wikipedia.org/wiki/Subset
 <table>
  <tr>
   <th>runtime</th>
+  <th>explanation</th>
  </tr>
  <tr>
-  <td>O(n) : n is the number of elements in the set</td>
+  <td>O(n)</td>
+  <td>n = number of elements in the set</td>
  </tr>
 </table>
 
@@ -197,9 +203,14 @@ https://en.wikipedia.org/wiki/Cartesian_product
 <table>
  <tr>
   <th>runtime</th>
+  <th>explanation</th>
  </tr>
  <tr>
-  <td>O(n*m) : n is the number of elements in the first set, m is the number of elements of the second set</td>
+  <td>O(n*m)
+  </td>
+  <td>
+    n = number of elements in the first set<br><br>m = number of elements of the second set
+  </td>
  </tr>
 </table>
 
