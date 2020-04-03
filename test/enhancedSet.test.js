@@ -20,7 +20,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.union('test'))).to.throws(Error)
-        .and.to.have.property('message', 'union expects an instance of Set');
+        .and.to.have.property('message', '.union expects an instance of Set');
     });
   });
 
@@ -35,7 +35,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.intersect('test'))).to.throws(Error).and.to
-        .have.property('message', 'intersect expects an instance of Set');
+        .have.property('message', '.intersect expects an instance of Set');
     });
   });
 
@@ -57,7 +57,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.complement('test'))).to.throws(Error).and.to
-        .have.property('message', 'complement expects an instance of Set');
+        .have.property('message', '.complement expects an instance of Set');
     });
   });
 
@@ -110,7 +110,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.product('test'))).to.throws(Error).and.to
-        .have.property('message', 'product expects an instance of Set');
+        .have.property('message', '.product expects an instance of Set');
     });
   });
 });
