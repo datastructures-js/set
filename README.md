@@ -61,9 +61,14 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
 <table>
  <tr>
   <th>runtime</th>
+  <th>explanation</th>
  </tr>
  <tr>
-  <td>O(n+m) : n is the number of elements in the first set, m is the number of elements of the second set</td>
+  <td>O(n+m)
+  </td>
+  <td>
+    n is the number of elements in the first set<br><br>m is the number of elements of the second set
+  </td>
  </tr>
 </table>
 
