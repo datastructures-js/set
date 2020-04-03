@@ -39,7 +39,7 @@ class EnhancedSet extends Set {
    */
   intersect(set) {
     if (!(set instanceof Set)) {
-      throw new Error('intersect expects an instance of Set');
+      throw new Error('.intersect expects an instance of Set');
     }
 
     const result = new EnhancedSet();
@@ -61,7 +61,7 @@ class EnhancedSet extends Set {
    */
   complement(set) {
     if (!(set instanceof Set)) {
-      throw new Error('complement expects an instance of Set');
+      throw new Error('.complement expects an instance of Set');
     }
 
     const result = new EnhancedSet();
@@ -122,7 +122,7 @@ class EnhancedSet extends Set {
    */
   product(set) {
     if (!(set instanceof Set)) {
-      throw new Error('product expects an instance of Set');
+      throw new Error('.product expects an instance of Set');
     }
 
     const result = new EnhancedSet();
