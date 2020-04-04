@@ -54,7 +54,7 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
 </table>
 
@@ -90,7 +90,7 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
 </table>
 
@@ -134,7 +134,7 @@ https://en.wikipedia.org/wiki/Subset
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
 </table>
 
@@ -165,7 +165,7 @@ https://en.wikipedia.org/wiki/Subset
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
 </table>
 
@@ -196,7 +196,7 @@ https://en.wikipedia.org/wiki/Cartesian_product
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
 </table>
 
