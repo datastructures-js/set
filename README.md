@@ -17,7 +17,7 @@ extends javascript ES6 Set class and implements main operations between two sets
   * [.complement(set)](#complementset)
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
-  * [.product(set)](#productset)
+  * [.product(set, separator)](#productset)
  * [Build](#build)
  * [License](#license)
 
@@ -187,8 +187,8 @@ console.log(s1.isSupersetOf(new Set['A', 'B'])); // true
 console.log(s1.isSupersetOf(s2)); // false
 ```
 
-### .product(set)
-applies cartesian product between two sets.
+### .product(set, separator)
+applies cartesian product between two sets. Default separator is `,`. 
 
 https://en.wikipedia.org/wiki/Cartesian_product
 
@@ -198,6 +198,7 @@ https://en.wikipedia.org/wiki/Cartesian_product
   <tr><th align="center" colspan="2">params</th></tr>
   <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>set</td><td>Set</td></tr>
+  <tr><td>separator</td><td>string</td></tr>
 </table>
 
 <table>
@@ -236,6 +237,28 @@ EnhancedSet {
   'D,D', 
   'D,E',
   'D,F'
+}
+*/
+
+console.log(set1.product(set2, ''));
+/*
+EnhancedSet {
+  'AC',
+  'AD',
+  'AE',
+  'AF',
+  'BC',
+  'BD',
+  'BE',
+  'BF',
+  'CC',
+  'CD',
+  'CE',
+  'CF',
+  'DC',
+  'DD', 
+  'DE',
+  'DF'
 }
 */
 ```
