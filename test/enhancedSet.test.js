@@ -87,7 +87,7 @@ describe('EnhancedSet unit tests', () => {
   });
 
   describe('.product(set)', () => {
-    it('applies cortesian product on two sets', () => {
+    it('applies cortesian product on two sets with default seprator', () => {
       const product = set1.product(set2);
       expect(product.size).to.equal(16);
       expect(product.has('1,3')).to.equal(true);
@@ -106,6 +106,27 @@ describe('EnhancedSet unit tests', () => {
       expect(product.has('4,4')).to.equal(true);
       expect(product.has('4,5')).to.equal(true);
       expect(product.has('4,6')).to.equal(true);
+    });
+
+    it('applies cortesian product on two sets with custom seprator', () => {
+      const product = set1.product(set2, ':');
+      expect(product.size).to.equal(16);
+      expect(product.has('1:3')).to.equal(true);
+      expect(product.has('1:4')).to.equal(true);
+      expect(product.has('1:5')).to.equal(true);
+      expect(product.has('1:6')).to.equal(true);
+      expect(product.has('2:3')).to.equal(true);
+      expect(product.has('2:4')).to.equal(true);
+      expect(product.has('2:5')).to.equal(true);
+      expect(product.has('2:6')).to.equal(true);
+      expect(product.has('3:3')).to.equal(true);
+      expect(product.has('3:4')).to.equal(true);
+      expect(product.has('3:5')).to.equal(true);
+      expect(product.has('3:6')).to.equal(true);
+      expect(product.has('4:3')).to.equal(true);
+      expect(product.has('4:4')).to.equal(true);
+      expect(product.has('4:5')).to.equal(true);
+      expect(product.has('4:6')).to.equal(true);
     });
 
     it('throws an error if param is not a set', () => {

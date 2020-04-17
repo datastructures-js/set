@@ -118,9 +118,10 @@ class EnhancedSet extends Set {
    * @public
    * Cartesian Product: https://en.wikipedia.org/wiki/Cartesian_product
    * @param {Set} set
+   * @param {string} separator
    * @returns {Set}
    */
-  product(set) {
+  product(set, seprator = ',') {
     if (!(set instanceof Set)) {
       throw new Error('.product expects an instance of Set');
     }
@@ -128,7 +129,7 @@ class EnhancedSet extends Set {
     const result = new EnhancedSet();
     this.forEach((e1) => {
       set.forEach((e2) => {
-        result.add(`${e1},${e2}`);
+        result.add(`${e1}${seprator}${e2}`);
       });
     });
 
