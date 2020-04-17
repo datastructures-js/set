@@ -17,7 +17,7 @@ extends javascript ES6 Set class and implements main operations between two sets
   * [.complement(set)](#complementset)
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
-  * [.product(set, separator)](#productset)
+  * [.product(set, separator)](#productset-separator)
  * [Build](#build)
  * [License](#license)
 
