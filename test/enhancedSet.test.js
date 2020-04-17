@@ -108,7 +108,7 @@ describe('EnhancedSet unit tests', () => {
       expect(product.has('4,6')).to.equal(true);
     });
 
-    it('applies cortesian product on two sets with default seprator', () => {
+    it('applies cortesian product on two sets with custom seprator', () => {
       const product = set1.product(set2, ':');
       expect(product.size).to.equal(16);
       expect(product.has('1:3')).to.equal(true);
