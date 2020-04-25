@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2020-04-25
+### Added
+- `.equals(set)` to check if two sets are equal. 
+- `.filter(cb)` to filter set elements based on a callback.
+- `.toArray()` to convert the set into an array.
+
+### Fixed
+- README
+
 ## [2.1.0] - 2020-04-17
 ### Added
 - enable using a custom separator between elements in `.product`.

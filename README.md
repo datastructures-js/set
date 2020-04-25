@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 
-extends javascript ES6 Set class and implements main operations between two sets.
+extends javascript ES6 Set class and implements new functions in it.
 
 # Table of Contents
 * [Install](#install)
@@ -12,12 +12,16 @@ extends javascript ES6 Set class and implements main operations between two sets
   * [require](#require)
   * [import](#import)
   * [javascript Set class](#javascript-set-class)
+  * [Construction](#construction)
   * [.union(set)](#unionset)
   * [.intersect(set)](#intersectset)
   * [.complement(set)](#complementset)
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
   * [.product(set, separator)](#productset-separator)
+  * [.equals(set)](#equalsset)
+  * [.filter(cb)](#filtercb)
+  * [.toArray()](#toarray)
  * [Build](#build)
  * [License](#license)
 
@@ -44,6 +48,16 @@ import EnhancedSet from '@datastructures-js/set';
 It extends ES6 **Set** class so it already has all the Set functionality.
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+### Construction
+constructor accepts an optional array of elements same like Set.
+
+#### Example
+
+```js
+const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
+const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
+```
 
 ### .union(set) 
 applies union with another set and returns a set with all elements of the two.
@@ -72,13 +86,19 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
-const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
-const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
-
-const union = set1.union(set2); // {A, B, C, D, E, F}
+console.log(set1.union(set2)); // EnhancedSet { 'A', 'B', 'C', 'D', 'E', 'F' }
 ```
 
 ### .intersect(set)
@@ -105,10 +125,19 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
-const intersect = set1.intersect(set2); // {C, D}
+console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
 ### .complement(set)
@@ -118,11 +147,20 @@ https://en.wikipedia.org/wiki/Complement_(set_theory)
 
 <img width="515" alt="complement" src="https://user-images.githubusercontent.com/6517308/76688734-0bf1a480-65f5-11ea-8e90-7d5c9ba2af66.png">
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
-const set2Complement = set1.complement(set2); // {A, B}
-const set1Complement = set2.complement(set1); // {E, F}
+console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
+console.log(set2.complement(set1)); // EnhancedSet { 'E', 'F' }
 ```
 
 ### .isSubsetOf(set)
@@ -149,11 +187,20 @@ https://en.wikipedia.org/wiki/Subset
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>boolean</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
-console.log(s1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
-console.log(s1.isSubsetOf(s2)); // false
+console.log(set1.isSubsetOf(new Set(['A', 'B', 'C', 'D', 'E']))); // true
+console.log(set1.isSubsetOf(set2)); // false
 ```
 
 ### .isSupersetOf(set)
@@ -183,8 +230,8 @@ https://en.wikipedia.org/wiki/Subset
 #### Example
 
 ```js
-console.log(s1.isSupersetOf(new Set['A', 'B'])); // true
-console.log(s1.isSupersetOf(s2)); // false
+console.log(set1.isSupersetOf(new Set(['A', 'B']))); // true
+console.log(set1.isSupersetOf(set2)); // false
 ```
 
 ### .product(set, separator)
@@ -261,6 +308,95 @@ EnhancedSet {
   'DF'
 }
 */
+```
+
+### .equals(set)
+checks if two sets are equal.
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+  <td>n = number of elements of the set</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>boolean</td>
+ </tr>
+</table>
+
+#### Example
+
+```js
+console.log(set1.equals(new Set(['B', 'A', 'D', 'C']))); // true
+console.log(set1.equals(new EnhancedSet(['D', 'C']))); // false
+```
+
+### .filter(cb)
+filters the set based on a callback and returns the filtered set.
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>cb</td><td>function</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+  <td>n = number of elements of the set</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
+#### Example
+
+```js
+console.log(set1.filter((el) => el > 'B')); // EnhancedSet { 'C', 'D' }
+```
+
+### .toArray()
+converts the set into an array.
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>array</td>
+ </tr>
+</table>
+
+#### Example
+
+```js
+console.log(set1.toArray()); // [ 'A', 'B', 'C', 'D' ]
 ```
 
 ## Build

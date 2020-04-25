@@ -20,7 +20,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.union('test'))).to.throws(Error)
-        .and.to.have.property('message', '.union expects an instance of Set');
+        .and.to.have.property('message', '.union expects a Set');
     });
   });
 
@@ -35,7 +35,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.intersect('test'))).to.throws(Error).and.to
-        .have.property('message', '.intersect expects an instance of Set');
+        .have.property('message', '.intersect expects a Set');
     });
   });
 
@@ -57,7 +57,7 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.complement('test'))).to.throws(Error).and.to
-        .have.property('message', '.complement expects an instance of Set');
+        .have.property('message', '.complement expects a Set');
     });
   });
 
@@ -131,7 +131,37 @@ describe('EnhancedSet unit tests', () => {
 
     it('throws an error if param is not a set', () => {
       expect((() => set1.product('test'))).to.throws(Error).and.to
-        .have.property('message', '.product expects an instance of Set');
+        .have.property('message', '.product expects a Set');
+    });
+  });
+
+  describe('.toArray()', () => {
+    it('converts the set into an array', () => {
+      expect(set1.toArray()).to.deep.equal([1, 2, 3, 4]);
+    });
+  });
+
+  describe('.equals()', () => {
+    it('checks if two sets are equal', () => {
+      expect(set1.equals(new Set([2, 4, 1, 3]))).to.equal(true);
+      expect(set1.equals(new Set([4, 1, 3]))).to.equal(false);
+    });
+
+    it('throws an error if param is not a set', () => {
+      expect((() => set1.equals('test'))).to.throws(Error).and.to
+        .have.property('message', '.equals expects a Set');
+    });
+  });
+
+  describe('.filter(cb)', () => {
+    it('filters the set using a callback', () => {
+      const filteredSet = set1.filter((el) => el > 2);
+      expect(filteredSet.equals(new Set([3, 4]))).to.equal(true);
+    });
+
+    it('throws an error if param is not a set', () => {
+      expect((() => set1.filter('test'))).to.throws(Error).and.to
+        .have.property('message', '.filter expects a callback');
     });
   });
 });
