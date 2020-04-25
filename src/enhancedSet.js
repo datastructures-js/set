@@ -20,7 +20,7 @@ class EnhancedSet extends Set {
    */
   union(set) {
     if (!(set instanceof Set)) {
-      throw new Error('.union expects an instance of Set');
+      throw new Error('.union expects a Set');
     }
 
     const result = new EnhancedSet();
@@ -39,7 +39,7 @@ class EnhancedSet extends Set {
    */
   intersect(set) {
     if (!(set instanceof Set)) {
-      throw new Error('.intersect expects an instance of Set');
+      throw new Error('.intersect expects a Set');
     }
 
     const result = new EnhancedSet();
@@ -61,7 +61,7 @@ class EnhancedSet extends Set {
    */
   complement(set) {
     if (!(set instanceof Set)) {
-      throw new Error('.complement expects an instance of Set');
+      throw new Error('.complement expects a Set');
     }
 
     const result = new EnhancedSet();
@@ -123,7 +123,7 @@ class EnhancedSet extends Set {
    */
   product(set, seprator = ',') {
     if (!(set instanceof Set)) {
-      throw new Error('.product expects an instance of Set');
+      throw new Error('.product expects a Set');
     }
 
     const result = new EnhancedSet();
@@ -134,6 +134,50 @@ class EnhancedSet extends Set {
     });
 
     return result;
+  }
+
+  /**
+   * @public
+   * checks if two sets are equal
+   * @param {Set} set
+   * @returns {boolean}
+   */
+  equals(set) {
+    if (!(set instanceof Set)) {
+      throw new Error('.equals expects a Set');
+    }
+
+    return this.isSubsetOf(set) && this.size === set.size;
+  }
+
+  /**
+   * @public
+   * filters the set elements using a callback
+   * @param {function} cb
+   * @returns {EnhancedSet}
+   */
+  filter(cb) {
+    if (typeof cb !== 'function') {
+      throw new Error('.filter expects a callback');
+    }
+
+    const result = new EnhancedSet();
+    this.forEach((element) => {
+      if (cb(element)) {
+        result.add(element);
+      }
+    });
+
+    return result;
+  }
+
+  /**
+   * @public
+   * converst the set into an array
+   * @returns {array}
+   */
+  toArray() {
+    return Array.from(this);
   }
 }
 
