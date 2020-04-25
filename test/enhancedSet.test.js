@@ -144,6 +144,7 @@ describe('EnhancedSet unit tests', () => {
   describe('.equals()', () => {
     it('checks if two sets are equal', () => {
       expect(set1.equals(new Set([2, 4, 1, 3]))).to.equal(true);
+      expect(set1.equals(new Set([4, 1, 3]))).to.equal(false);
     });
 
     it('throws an error if param is not a set', () => {
