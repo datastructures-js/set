@@ -52,6 +52,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 ### Construction
 constructor accepts an optional array of elements same like Set.
 
+#### Example
+
 ```js
 const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
 const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
