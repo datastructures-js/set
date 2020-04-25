@@ -12,6 +12,7 @@ extends javascript ES6 Set class and implements new functions in it.
   * [require](#require)
   * [import](#import)
   * [javascript Set class](#javascript-set-class)
+  * [Construction](#construction)
   * [.union(set)](#unionset)
   * [.intersect(set)](#intersectset)
   * [.complement(set)](#complementset)
@@ -47,6 +48,14 @@ import EnhancedSet from '@datastructures-js/set';
 It extends ES6 **Set** class so it already has all the Set functionality.
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+### Construction
+constructor accepts an optional array of elements same like Set.
+
+```js
+const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
+const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
+```
 
 ### .union(set) 
 applies union with another set and returns a set with all elements of the two.
@@ -87,9 +96,6 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
 #### Example
 
 ```js
-const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
-const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
-
 const union = set1.union(set2); // {A, B, C, D, E, F}
 ```
 
@@ -191,8 +197,8 @@ https://en.wikipedia.org/wiki/Subset
 #### Example
 
 ```js
-console.log(s1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
-console.log(s1.isSubsetOf(s2)); // false
+console.log(set1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
+console.log(set1.isSubsetOf(set2)); // false
 ```
 
 ### .isSupersetOf(set)
@@ -222,8 +228,8 @@ https://en.wikipedia.org/wiki/Subset
 #### Example
 
 ```js
-console.log(s1.isSupersetOf(new Set['A', 'B'])); // true
-console.log(s1.isSupersetOf(s2)); // false
+console.log(set1.isSupersetOf(new Set['A', 'B'])); // true
+console.log(set1.isSupersetOf(set2)); // false
 ```
 
 ### .product(set, separator)
@@ -333,6 +339,11 @@ checks if two sets are equal.
 
 #### Example
 
+```js
+console.log(set1.equals(new Set(['B', 'A', 'D', 'C']))); // true
+console.log(set1.equals(new EnhancedSet(['D', 'C']))); // false
+```
+
 ### .filter(cb)
 filters the set elements based on a callback and returns another set.
 
@@ -364,6 +375,10 @@ filters the set elements based on a callback and returns another set.
 
 #### Example
 
+```js
+console.log(set1.filter((el) => el > 'B')); // EnhancedSet { 'C', 'D' }
+```
+
 ### .toArray()
 converts the set into an array.
 
@@ -377,6 +392,10 @@ converts the set into an array.
 </table>
 
 #### Example
+
+```js
+console.log(set1.toArray()); // [ 'A', 'B', 'C', 'D' ]
+```
 
 ## Build
 ```
