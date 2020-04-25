@@ -347,7 +347,7 @@ console.log(set1.equals(new EnhancedSet(['D', 'C']))); // false
 ```
 
 ### .filter(cb)
-filters the set elements based on a callback and returns another set.
+filters a set based on a callback and returns the filtered set.
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
