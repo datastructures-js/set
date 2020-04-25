@@ -98,7 +98,7 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
 #### Example
 
 ```js
-const union = set1.union(set2); // {A, B, C, D, E, F}
+console.log(set1.union(set2)); // EnhancedSet { 'A', 'B', 'C', 'D', 'E', 'F' }
 ```
 
 ### .intersect(set)
@@ -137,7 +137,7 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
 #### Example
 
 ```js
-const intersect = set1.intersect(set2); // {C, D}
+console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
 ### .complement(set)
@@ -159,8 +159,8 @@ https://en.wikipedia.org/wiki/Complement_(set_theory)
 #### Example
 
 ```js
-const set2Complement = set1.complement(set2); // {A, B}
-const set1Complement = set2.complement(set1); // {E, F}
+console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
+console.log(set2.complement(set1)); // EnhancedSet { 'E', 'F' }
 ```
 
 ### .isSubsetOf(set)
@@ -199,7 +199,7 @@ https://en.wikipedia.org/wiki/Subset
 #### Example
 
 ```js
-console.log(set1.isSubsetOf(new Set['A', 'B', 'C', 'D', 'E'])); // true
+console.log(set1.isSubsetOf(new Set(['A', 'B', 'C', 'D', 'E']))); // true
 console.log(set1.isSubsetOf(set2)); // false
 ```
 
@@ -230,7 +230,7 @@ https://en.wikipedia.org/wiki/Subset
 #### Example
 
 ```js
-console.log(set1.isSupersetOf(new Set['A', 'B'])); // true
+console.log(set1.isSupersetOf(new Set(['A', 'B']))); // true
 console.log(set1.isSupersetOf(set2)); // false
 ```
 
