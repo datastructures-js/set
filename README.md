@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 
-extends javascript ES6 Set class and implements main operations between two sets.
+extends javascript ES6 Set class and implements new functions in it.
 
 # Table of Contents
 * [Install](#install)
@@ -18,6 +18,9 @@ extends javascript ES6 Set class and implements main operations between two sets
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
   * [.product(set, separator)](#productset-separator)
+  * [.equals(set)](#equalsset)
+  * [.filter(cb)](#filtercb)
+  * [.toArray()](#toarray)
  * [Build](#build)
  * [License](#license)
 
@@ -72,6 +75,15 @@ https://en.wikipedia.org/wiki/Union_(set_theory)
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -105,6 +117,15 @@ https://en.wikipedia.org/wiki/Intersection_(set_theory)
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -117,6 +138,15 @@ returns elements in a set and not in the other set relative to their union.
 https://en.wikipedia.org/wiki/Complement_(set_theory)
 
 <img width="515" alt="complement" src="https://user-images.githubusercontent.com/6517308/76688734-0bf1a480-65f5-11ea-8e90-7d5c9ba2af66.png">
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
 
 #### Example
 
@@ -146,6 +176,15 @@ https://en.wikipedia.org/wiki/Subset
  <tr>
   <td>O(n)</td>
   <td>n = number of elements of the set</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>boolean</td>
  </tr>
 </table>
 
@@ -262,6 +301,82 @@ EnhancedSet {
 }
 */
 ```
+
+### .equals(set)
+checks if two sets are equal.
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>set</td><td>Set</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+  <td>n = number of elements of the set</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>boolean</td>
+ </tr>
+</table>
+
+#### Example
+
+### .filter(cb)
+filters the set elements based on a callback and returns another set.
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>cb</td><td>function</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+  <td>n = number of elements of the set</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
+#### Example
+
+### .toArray()
+converts the set into an array.
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>array</td>
+ </tr>
+</table>
+
+#### Example
 
 ## Build
 ```
