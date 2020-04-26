@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.1] - 2020-04-25
+### Fixed
+- remove unused dependency.
+
 ## [2.2.0] - 2020-04-25
 ### Added
 - `.equals(set)` to check if two sets are equal. 
