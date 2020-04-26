@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-js/set",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Enhanced Set that extends javascript ES6 Set",
   "main": "index.js",
   "scripts": {
@@ -36,8 +36,5 @@
     "grunt-mocha-test": "^0.13.3",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.2"
-  },
-  "dependencies": {
-    "timer-node": "^2.0.0"
   }
 }
