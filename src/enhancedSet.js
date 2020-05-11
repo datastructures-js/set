@@ -15,7 +15,7 @@ class EnhancedSet extends Set {
    * Union: https://en.wikipedia.org/wiki/Union_(set_theory)
    * returns a set of all elements of the set and another set
    * @param {Set} set
-   * @returns {Set}
+   * @returns {EnhancedSet}
    * @throws {Error}
    */
   union(set) {
@@ -34,7 +34,7 @@ class EnhancedSet extends Set {
    * Intersection: https://en.wikipedia.org/wiki/Intersection_(set_theory)
    * returns the common elements between the set and another set
    * @param {Set} set
-   * @returns {Set}
+   * @returns {EnhancedSet}
    * @throws {Error}
    */
   intersect(set) {
@@ -57,7 +57,7 @@ class EnhancedSet extends Set {
    * Complement: https://en.wikipedia.org/wiki/Complement_(set_theory)
    * returns the elements in the set that are not in another set
    * @param {Set} set
-   * @returns {Set}
+   * @returns {EnhancedSet}
    */
   complement(set) {
     if (!(set instanceof Set)) {
@@ -119,7 +119,7 @@ class EnhancedSet extends Set {
    * Cartesian Product: https://en.wikipedia.org/wiki/Cartesian_product
    * @param {Set} set
    * @param {string} separator
-   * @returns {Set}
+   * @returns {EnhancedSet}
    */
   product(set, seprator = ',') {
     if (!(set instanceof Set)) {
@@ -178,6 +178,15 @@ class EnhancedSet extends Set {
    */
   toArray() {
     return Array.from(this);
+  }
+
+  /**
+   * @public
+   * clones the set
+   * @returns {EnhancedSet}
+   */
+  clone() {
+    return new EnhancedSet(this.toArray());
   }
 }
 

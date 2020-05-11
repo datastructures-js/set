@@ -22,6 +22,7 @@ extends javascript ES6 Set class and implements new functions in it.
   * [.equals(set)](#equalsset)
   * [.filter(cb)](#filtercb)
   * [.toArray()](#toarray)
+  * [.clone()](#clone)
  * [Build](#build)
  * [License](#license)
 
@@ -262,6 +263,15 @@ https://en.wikipedia.org/wiki/Cartesian_product
  </tr>
 </table>
 
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 #### Example
 
 ```js
@@ -398,6 +408,23 @@ converts the set into an array.
 ```js
 console.log(set1.toArray()); // [ 'A', 'B', 'C', 'D' ]
 ```
+
+### .clone()
+clones the set.
+
+```js
+console.log(set1.clone()); // EnhancedSet { 'A', 'B', 'C', 'D' }
+```
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
 
 ## Build
 ```

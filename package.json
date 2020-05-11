@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-js/set",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Enhanced Set that extends javascript ES6 Set",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "union",
     "intersect",
     "subset",
-    "superset"
+    "superset",
+    "set data structure"
   ],
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
