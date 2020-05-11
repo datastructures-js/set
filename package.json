@@ -17,7 +17,8 @@
     "union",
     "intersect",
     "subset",
-    "superset"
+    "superset",
+    "set data structure"
   ],
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
