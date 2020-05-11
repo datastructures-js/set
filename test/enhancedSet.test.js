@@ -164,4 +164,13 @@ describe('EnhancedSet unit tests', () => {
         .have.property('message', '.filter expects a callback');
     });
   });
+
+  describe('.clone()', () => {
+    it('clones the set', () => {
+      const set = new EnhancedSet(['A', 'B', 'C']);
+      const clone = set.clone();
+      expect(clone).to.be.instanceof(EnhancedSet);
+      expect(clone.equals(set)).to.equal(true);
+    });
+  });
 });
