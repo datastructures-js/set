@@ -324,7 +324,7 @@ EnhancedSet {
 ### .power(m, separator)
 applies cartesian product on the set itself. It projects the power of a number on sets and also accepts a separator with default empty string value ''. 
 
-<img width="450" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
+<img width="500" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
