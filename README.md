@@ -19,6 +19,7 @@ extends javascript ES6 Set class and implements new functions in it.
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
   * [.product(set, separator)](#productset-separator)
+  * [.power(m, separator)](#powerm-separator)
   * [.equals(set)](#equalsset)
   * [.filter(cb)](#filtercb)
   * [.toArray()](#toarray)
@@ -236,7 +237,7 @@ console.log(set1.isSupersetOf(set2)); // false
 ```
 
 ### .product(set, separator)
-applies cartesian product between two sets. Default separator is `,`. 
+applies cartesian product between two sets. Default separator is empty string ''. 
 
 https://en.wikipedia.org/wiki/Cartesian_product
 
@@ -278,6 +279,28 @@ https://en.wikipedia.org/wiki/Cartesian_product
 console.log(set1.product(set2));
 /*
 EnhancedSet {
+  'AC',
+  'AD',
+  'AE',
+  'AF',
+  'BC',
+  'BD',
+  'BE',
+  'BF',
+  'CC',
+  'CD',
+  'CE',
+  'CF',
+  'DC',
+  'DD', 
+  'DE',
+  'DF'
+}
+*/
+
+console.log(set1.product(set2, ','));
+/*
+EnhancedSet {
   'A,C',
   'A,D',
   'A,E',
@@ -296,26 +319,79 @@ EnhancedSet {
   'D,F'
 }
 */
+```
 
-console.log(set1.product(set2, ''));
+### .power(m, separator)
+applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
+
+<img width="500" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>m</td><td>number</td></tr>
+  <tr><td>separator</td><td>string</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n^m)
+  </td>
+  <td>
+    n = number of elements of the set<br><br>m = the multiplication power number
+  </td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
+#### Example
+
+```js
+const x = new EnhancedSet(['A', 'B']);
+
+const y = s.power(2);
+console.log(y);
 /*
-EnhancedSet {
-  'AC',
-  'AD',
-  'AE',
-  'AF',
-  'BC',
-  'BD',
-  'BE',
-  'BF',
-  'CC',
-  'CD',
-  'CE',
-  'CF',
-  'DC',
-  'DD', 
-  'DE',
-  'DF'
+EnhancedSet(4) [Set] {
+  'AA',
+  'AB',
+  'BA',
+  'BB'
+}
+*/
+
+const z = y.power(2);
+console.log(z);
+/*
+EnhancedSet(16) [Set] {
+  'AAAA',
+  'AAAB',
+  'AABA',
+  'AABB',
+  'ABAA',
+  'ABAB',
+  'ABBA',
+  'ABBB',
+  'BAAA',
+  'BAAB',
+  'BABA',
+  'BABB',
+  'BBAA',
+  'BBAB',
+  'BBBA',
+  'BBBB'
 }
 */
 ```

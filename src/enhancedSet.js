@@ -121,7 +121,7 @@ class EnhancedSet extends Set {
    * @param {string} separator
    * @returns {EnhancedSet}
    */
-  product(set, seprator = ',') {
+  product(set, seprator = '') {
     if (!(set instanceof Set)) {
       throw new Error('.product expects a Set');
     }
@@ -132,6 +132,23 @@ class EnhancedSet extends Set {
         result.add(`${e1}${seprator}${e2}`);
       });
     });
+
+    return result;
+  }
+
+  /**
+   * @public
+   * projecting the power concept into Set self Cartesian Product
+   * @param {number} m
+   * @returns {EnhancedSet}
+   */
+  power(m, seprator = '') {
+    if (m === 0) return new EnhancedSet();
+
+    let result = this.clone();
+    for (let i = 0; i < m - 1; i += 1) {
+      result = result.product(this, seprator);
+    }
 
     return result;
   }

@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2020-12-12
+
+### Added
+- `.power(m, separator)` to calculate the cartesian product on the set itself.
+
+### Changed
+- default separator in `.product(set, separator)` is now an empty string.
+
 ## [2.3.0] - 2020-05-10
 ### Added
 - `.clone()`
