@@ -19,6 +19,7 @@ extends javascript ES6 Set class and implements new functions in it.
   * [.isSubsetOf(set)](#issubsetofset)
   * [.isSupersetOf(set)](#issupersetofset)
   * [.product(set, separator)](#productset-separator)
+  * [.permutations(set, separator)](#permutationsset-separator)
   * [.power(m, separator)](#powerm-separator)
   * [.equals(set)](#equalsset)
   * [.filter(cb)](#filtercb)
@@ -399,7 +400,7 @@ EnhancedSet(16) [Set] {
 ### .permutations(m, separator)
 generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
 
-<img width="500" alt="product" src="">
+<img width="375" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
