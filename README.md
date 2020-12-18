@@ -325,7 +325,7 @@ EnhancedSet {
 ### .power(m, separator)
 applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
 
-<img width="500" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
+<img width="450" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
@@ -400,7 +400,7 @@ EnhancedSet(16) [Set] {
 ### .permutations(m, separator)
 generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
 
-<img width="500" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
+<img width="450" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
