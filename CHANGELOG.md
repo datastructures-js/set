@@ -6,10 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2020-12-19
+
+### Added
+- `.permutations(m, separator)` to generate m permutations from the set.
+
 ## [3.0.0] - 2020-12-12
 
 ### Added
-- `.power(m, separator)` to calculate the cartesian product on the set itself.
+- `.power(m, separator)` to generate the cartesian product between the set elements m times.
 
 ### Changed
 - default separator in `.product(set, separator)` is now an empty string.
