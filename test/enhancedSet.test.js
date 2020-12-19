@@ -93,7 +93,7 @@ describe('EnhancedSet unit tests', () => {
   });
 
   describe('.product(set)', () => {
-    it('applies cortesian product on two sets with default seprator', () => {
+    it('applies cortesian product on two sets with default separator', () => {
       const product = set1.product(set2);
       expect(product.size).to.equal(16);
       expect(product.has('13')).to.equal(true);
@@ -114,7 +114,7 @@ describe('EnhancedSet unit tests', () => {
       expect(product.has('46')).to.equal(true);
     });
 
-    it('applies cortesian product on two sets with custom seprator', () => {
+    it('applies cortesian product on two sets with custom separator', () => {
       const product = set1.product(set2, ':');
       expect(product.size).to.equal(16);
       expect(product.has('1:3')).to.equal(true);
@@ -141,13 +141,22 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.power(n)', () => {
+  describe('.power(n, separator)', () => {
+    const s = new EnhancedSet(['0', '1']);
+
+    it('throws an error when n is not a number', () => {
+      expect(() => s.power('test')).to.throws(Error).and.to
+        .have.property(
+          'message',
+          '.power expects a positive number'
+        );
+    });
+
     it('returns empty set when n is 0', () => {
       expect(set1.power(0).size).to.equal(0);
     });
 
     it('applies cartesian product on the set itself n times', () => {
-      const s = new EnhancedSet(['0', '1']);
       expect(s.power(3).toArray()).to.deep.equal([
         '000',
         '001',
@@ -157,6 +166,37 @@ describe('EnhancedSet unit tests', () => {
         '101',
         '110',
         '111'
+      ]);
+    });
+  });
+
+  describe('permutations(m, separator)', () => {
+    const s = new EnhancedSet(['A', 'B', 'C']);
+
+    it('throws an error when m is not a number', () => {
+      expect(() => s.permutations('test')).to.throws(Error).and.to
+        .have.property(
+          'message',
+          '.permutations expects a positive number'
+        );
+    });
+
+    it('throws an error when m is bigger than set size', () => {
+      expect(() => s.permutations(5)).to.throws(Error).and.to
+        .have.property(
+          'message',
+          '.permutations expects a number less or euqal set size'
+        );
+    });
+
+    it('generates m permutations of a set', () => {
+      expect(s.permutations(3, ',').toArray()).to.deep.equal([
+        'A,B,C',
+        'A,C,B',
+        'B,A,C',
+        'B,C,A',
+        'C,A,B',
+        'C,B,A'
       ]);
     });
   });

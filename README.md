@@ -20,6 +20,7 @@ extends javascript ES6 Set class and implements new functions in it.
   * [.isSupersetOf(set)](#issupersetofset)
   * [.product(set, separator)](#productset-separator)
   * [.power(m, separator)](#powerm-separator)
+  * [.permutations(m, separator)](#permutationsm-separator)
   * [.equals(set)](#equalsset)
   * [.filter(cb)](#filtercb)
   * [.toArray()](#toarray)
@@ -324,7 +325,7 @@ EnhancedSet {
 ### .power(m, separator)
 applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
 
-<img width="500" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
+<img width="450" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
@@ -361,7 +362,7 @@ applies cartesian product on the set itself. It projects the power concept on se
 ```js
 const x = new EnhancedSet(['A', 'B']);
 
-const y = s.power(2);
+const y = x.power(2);
 console.log(y);
 /*
 EnhancedSet(4) [Set] {
@@ -392,6 +393,66 @@ EnhancedSet(16) [Set] {
   'BBAB',
   'BBBA',
   'BBBB'
+}
+*/
+```
+
+### .permutations(m, separator)
+generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
+
+<img width="400" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
+
+<table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td><b>name</b></td><td><b>type</b></td></tr>
+  <tr><td>m</td><td>number</td></tr>
+  <tr><td>separator</td><td>string</td></tr>
+</table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>explanation</th>
+ </tr>
+ <tr>
+  <td>O(n^m)
+  </td>
+  <td>
+    n = number of elements of the set<br><br>m = the multiplication power number
+  </td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>EnhancedSet</td>
+ </tr>
+</table>
+
+#### Example
+
+```js
+const x = new EnhancedSet(['A', 'B', 'C', 'D']);
+
+const y = x.permutations(2);
+console.log(y);
+/*
+EnhancedSet(12) [Set] {
+  'AB',
+  'AC',
+  'AD',
+  'BA',
+  'BC',
+  'BD',
+  'CA',
+  'CB',
+  'CD',
+  'DA',
+  'DB',
+  'DC'
 }
 */
 ```
