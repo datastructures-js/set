@@ -182,13 +182,11 @@ class EnhancedSet extends Set {
         return;
       }
 
-      currentSet.forEach((element) => {
+      currentSet.forEach((el) => {
         const nextSet = currentSet.clone();
-        nextSet.delete(element);
-        const accumulated = prefix.length
-          ? `${prefix}${separator}${element}`
-          : element;
-        generatePermutation(nextSet, i + 1, accumulated);
+        nextSet.delete(el);
+        const acc = prefix.length ? `${prefix}${separator}${el}` : `${el}`;
+        generatePermutation(nextSet, i + 1, acc);
       });
     };
 
