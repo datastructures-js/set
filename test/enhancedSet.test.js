@@ -189,7 +189,7 @@ describe('EnhancedSet unit tests', () => {
         );
     });
 
-    it('generates m permutations of a set', () => {
+    it('generates m permutations of a set of strings', () => {
       expect(s.permutations(3, ',').toArray()).to.deep.equal([
         'A,B,C',
         'A,C,B',
@@ -197,6 +197,24 @@ describe('EnhancedSet unit tests', () => {
         'B,C,A',
         'C,A,B',
         'C,B,A'
+      ]);
+    });
+
+    it('generates m permutations of a set of numbers', () => {
+      const numbers = new EnhancedSet([1, 2, 3, 4]);
+      expect(numbers.permutations(2).toArray()).to.deep.equal([
+        '12',
+        '13',
+        '14',
+        '21',
+        '23',
+        '24',
+        '31',
+        '32',
+        '34',
+        '41',
+        '42',
+        '43'
       ]);
     });
   });
