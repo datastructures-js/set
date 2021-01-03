@@ -11,7 +11,6 @@ extends javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScr
 * [require](#require)
 * [import](#import)
 * [API](#api)
-  * [javascript Set class](#javascript-set-class)
   * [Construction](#construction)
   * [.union(set)](#unionset)
   * [.intersect(set)](#intersectset)
