@@ -47,9 +47,7 @@ import { EnhancedSet } from '@datastructures-js/set';
 
 ## API
 
-### javascript Set class
-It extends <a href="
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">ES6 Set</a> class so it already has all the Set functionality.
+extends <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">ES6 Set</a> class so it already has all the Set functionality.
 
 ### Construction
 constructor accepts an optional array of elements same like Set.
