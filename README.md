@@ -401,12 +401,14 @@ filters the set based on a callback and returns the filtered set.
 <table>
   <tr>
     <th align="center">params</th>
+    <th align="center">return</th>
     <th align="center">runtime</th>
   </tr>
   <tr>
     <td align="center">
       cb: function
     </td>
+    <td align="center">EnhancedSet</td>
     <td align="center">
       O(n)
       <br />
