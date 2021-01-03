@@ -93,7 +93,7 @@ applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">inters
   <tr>
     <td align="center">set: Set</td>
     <td align="center">EnhancedSet</td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of the current set
@@ -117,7 +117,7 @@ finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">comple
   <tr>
     <td align="center">set: Set</td>
     <td align="center">EnhancedSet</td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of the current set
@@ -142,7 +142,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">subset</a>
   <tr>
     <td align="center">set: Set</td>
     <td align="center">boolean</td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of current set
@@ -167,7 +167,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">superset</
   <tr>
     <td align="center">set: Set</td>
     <td align="center">boolean</td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of current set
@@ -408,7 +408,7 @@ filters the set based on a callback and returns the filtered set.
     <td align="center">
       cb: function
     </td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of the current set
