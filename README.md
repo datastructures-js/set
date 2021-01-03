@@ -96,7 +96,7 @@ applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">inters
     <td>
       O(n)
       <br />
-      n = number of elements of the set
+      n = number of elements of the current set
     </td>
   </tr>
 </table>
@@ -120,7 +120,7 @@ finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">comple
     <td>
       O(n)
       <br />
-      n = number of elements of current set
+      n = number of elements of the current set
     </td>
   </tr>
 </table>
@@ -383,7 +383,7 @@ checks if two sets are equal.
       set: Set
     </td>
     <td align="center">boolean</td>
-    <td>
+    <td align="center">
       O(n)
       <br />
       n = number of elements of the current set
