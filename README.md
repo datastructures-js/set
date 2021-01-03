@@ -272,7 +272,7 @@ applies cartesian product on the set itself. It projects the power concept on se
     <td>
       O(n^m)
       <br />
-      n = number of elements of the current set
+      n = number of elements of the set
       <br />
       m = the multiplication power number
     </td>
@@ -338,7 +338,7 @@ generates m permutations from the set elements. It also accepts a separator with
     <td>
       O(n^m)
       <br />
-      n = number of elements of the current set
+      n = number of elements of the set
       <br />
       m = number of permutations
     </td>
@@ -412,7 +412,7 @@ filters the set based on a callback and returns the filtered set.
     <td align="center">
       O(n)
       <br />
-      n = number of elements of the current set
+      n = number of elements of the set
     </td>
   </tr>
 </table>
