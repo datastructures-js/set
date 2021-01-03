@@ -48,9 +48,8 @@ import { EnhancedSet } from '@datastructures-js/set';
 ## API
 
 ### javascript Set class
-It extends ES6 **Set** class so it already has all the Set functionality.
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+It extends <a href="
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">ES6 Set</a> class so it already has all the Set functionality.
 
 ### Construction
 constructor accepts an optional array of elements same like Set.
@@ -61,9 +60,7 @@ const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
 ```
 
 ### .union(set) 
-applies union with another set and returns a set with all elements of the two.
-
-https://en.wikipedia.org/wiki/Union_(set_theory)
+applies <a href="https://en.wikipedia.org/wiki/Union_(set_theory)">union</a> with another set and returns a set with all elements of the two.
 
 <table>
   <tr>
@@ -89,9 +86,7 @@ console.log(set1.union(set2)); // EnhancedSet { 'A', 'B', 'C', 'D', 'E', 'F' }
 ```
 
 ### .intersect(set)
-intersects the set with another set and returns a set with existing elements in both sets.
-
-https://en.wikipedia.org/wiki/Intersection_(set_theory)
+applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">intersection</a> between the set and another set and returns the existing elements in both.
 
 <table>
   <tr>
@@ -115,9 +110,7 @@ console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
 ### .complement(set)
-returns elements in a set and not in the other set relative to their union.
-
-https://en.wikipedia.org/wiki/Complement_(set_theory)
+finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">complement</a> of a set from the set elements.
 
 <table>
  <tr>
@@ -127,8 +120,6 @@ https://en.wikipedia.org/wiki/Complement_(set_theory)
   <td>EnhancedSet</td>
  </tr>
 </table>
-
-#### Example
 
 ```js
 console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
