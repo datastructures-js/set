@@ -3,7 +3,7 @@
  * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  *
  * @class
- * @extends Set - ES6 Set REF: https://mzl.la/2QajnHr
+ * @extends Set - ES6 global Set https://mzl.la/2QajnHr
  */
 class EnhancedSet extends Set {
   /**
