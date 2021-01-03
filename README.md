@@ -8,9 +8,9 @@ extends javascript ES6 Set class and implements new functions in it.
 
 # Table of Contents
 * [Install](#install)
+* [require](#require)
+* [import](#import)
 * [API](#api)
-  * [require](#require)
-  * [import](#import)
   * [javascript Set class](#javascript-set-class)
   * [Construction](#construction)
   * [.union(set)](#unionset)
@@ -33,19 +33,19 @@ extends javascript ES6 Set class and implements new functions in it.
 npm install --save @datastructures-js/set
 ```
 
-## API
-
 ### require
 
 ```js
-const EnhancedSet = require('@datastructures-js/set');
+const { EnhancedSet } = require('@datastructures-js/set');
 ```
 
 ### import
 
 ```js
-import EnhancedSet from '@datastructures-js/set';
+import { EnhancedSet } from '@datastructures-js/set';
 ```
+
+## API
 
 ### javascript Set class
 It extends ES6 **Set** class so it already has all the Set functionality.
@@ -54,8 +54,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ### Construction
 constructor accepts an optional array of elements same like Set.
-
-#### Example
 
 ```js
 const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
@@ -67,38 +65,24 @@ applies union with another set and returns a set with all elements of the two.
 
 https://en.wikipedia.org/wiki/Union_(set_theory)
 
-<img width="209" alt="union" src="https://user-images.githubusercontent.com/6517308/76688727-04320000-65f5-11ea-8c71-9f8b0ab9660e.png">
-
 <table>
-  <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td><b>name</b></td><td><b>type</b></td></tr>
-  <tr><td>set</td><td>Set</td></tr>
+  <tr>
+    <th align="center">params</th>
+    <th align="center">return</th>
+    <th align="center">runtime</th>
+  </tr>
+  <tr>
+    <td align="center">set: Set</td>
+    <td align="center">EnhancedSet</td>
+    <td>
+      O(n+m)
+      <br />
+      n = number of elements of the first set
+      <br />
+      m = number of elements of the second set
+    </td>
+  </tr>
 </table>
-
-<table>
- <tr>
-  <th>runtime</th>
-  <th>explanation</th>
- </tr>
- <tr>
-  <td>O(n+m)
-  </td>
-  <td>
-    n = number of elements of the first set<br><br>m = number of elements of the second set
-  </td>
- </tr>
-</table>
-
-<table>
- <tr>
-  <th>return</th>
- </tr>
- <tr>
-  <td>EnhancedSet</td>
- </tr>
-</table>
-
-#### Example
 
 ```js
 console.log(set1.union(set2)); // EnhancedSet { 'A', 'B', 'C', 'D', 'E', 'F' }
@@ -109,35 +93,22 @@ intersects the set with another set and returns a set with existing elements in 
 
 https://en.wikipedia.org/wiki/Intersection_(set_theory)
 
-<img width="226" alt="intersect" src="https://user-images.githubusercontent.com/6517308/76688730-06945a00-65f5-11ea-9c46-4d332bc073b6.png">
-
 <table>
-  <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td><b>name</b></td><td><b>type</b></td></tr>
-  <tr><td>set</td><td>Set</td></tr>
+  <tr>
+    <th align="center">params</th>
+    <th align="center">return</th>
+    <th align="center">runtime</th>
+  </tr>
+  <tr>
+    <td align="center">set: Set</td>
+    <td align="center">EnhancedSet</td>
+    <td>
+      O(n)
+      <br />
+      n = number of elements of the first set
+    </td>
+  </tr>
 </table>
-
-<table>
- <tr>
-  <th>runtime</th>
-  <th>explanation</th>
- </tr>
- <tr>
-  <td>O(n)</td>
-  <td>n = number of elements of the set</td>
- </tr>
-</table>
-
-<table>
- <tr>
-  <th>return</th>
- </tr>
- <tr>
-  <td>EnhancedSet</td>
- </tr>
-</table>
-
-#### Example
 
 ```js
 console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
@@ -147,8 +118,6 @@ console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 returns elements in a set and not in the other set relative to their union.
 
 https://en.wikipedia.org/wiki/Complement_(set_theory)
-
-<img width="515" alt="complement" src="https://user-images.githubusercontent.com/6517308/76688734-0bf1a480-65f5-11ea-8e90-7d5c9ba2af66.png">
 
 <table>
  <tr>
