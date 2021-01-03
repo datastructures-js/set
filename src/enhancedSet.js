@@ -1,22 +1,16 @@
 /**
- * @datastructures-js/set
- * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
- */
-
-/**
- * @class EnhancedSet
+ * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
+ *
+ * @class
  * @extends Set - ES6 Set REF: https://mzl.la/2QajnHr
- * implements main set operations
  */
 class EnhancedSet extends Set {
   /**
+   * Returns a set of all elements of the set and another set
    * @public
-   * Union: https://en.wikipedia.org/wiki/Union_(set_theory)
-   * returns a set of all elements of the set and another set
    * @param {Set} set
    * @returns {EnhancedSet}
-   * @throws {Error}
    */
   union(set) {
     if (!(set instanceof Set)) {
@@ -30,12 +24,10 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Returns the common elements between the set and another set
    * @public
-   * Intersection: https://en.wikipedia.org/wiki/Intersection_(set_theory)
-   * returns the common elements between the set and another set
    * @param {Set} set
    * @returns {EnhancedSet}
-   * @throws {Error}
    */
   intersect(set) {
     if (!(set instanceof Set)) {
@@ -53,9 +45,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Returns the elements in the set that are not in another set
    * @public
-   * Complement: https://en.wikipedia.org/wiki/Complement_(set_theory)
-   * returns the elements in the set that are not in another set
    * @param {Set} set
    * @returns {EnhancedSet}
    */
@@ -75,9 +66,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Checks if the set is a subset of another set
    * @public
-   * Subset: https://en.wikipedia.org/wiki/Subset
-   * checks if the set is a subset of another set
    * @param {Set} set
    * @returns {boolean}
    */
@@ -95,9 +85,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Checks if the set is a superset of another set
    * @public
-   * Subset: https://en.wikipedia.org/wiki/Subset
-   * checks if the set is a superset of another set
    * @param {Set} set
    * @returns {boolean}
    */
@@ -115,10 +104,10 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Applies a cartesian product with another set
    * @public
-   * Cartesian Product: https://en.wikipedia.org/wiki/Cartesian_product
    * @param {Set} set
-   * @param {string} separator
+   * @param {string} [separator]
    * @returns {EnhancedSet}
    */
   product(set, seprator = '') {
@@ -137,10 +126,10 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Applies cartesian product with the set itself
    * @public
-   * projecting the power concept into Set self Cartesian Product
    * @param {number} m
-   * @param {string} separator
+   * @param {string} [separator]
    * @returns {EnhancedSet}
    */
   power(m, seprator = '') {
@@ -159,10 +148,10 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Finds m permutations of the set
    * @public
-   * finds m permutations of the set
    * @param {number} m
-   * @param {string} separator
+   * @param {string} [separator]
    * @returns {EnhancedSet}
    */
   permutations(m, separator = '') {
@@ -195,8 +184,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Checks if two sets are equal
    * @public
-   * checks if two sets are equal
    * @param {Set} set
    * @returns {boolean}
    */
@@ -209,8 +198,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Filters the set elements using a callback
    * @public
-   * filters the set elements using a callback
    * @param {function} cb
    * @returns {EnhancedSet}
    */
@@ -230,8 +219,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Converst the set into an array
    * @public
-   * converst the set into an array
    * @returns {array}
    */
   toArray() {
@@ -239,8 +228,8 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Clones the set
    * @public
-   * clones the set
    * @returns {EnhancedSet}
    */
   clone() {
