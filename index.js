@@ -1,3 +1,3 @@
-const EnhancedSet = require('./src/enhancedSet');
+const { EnhancedSet } = require('./src/enhancedSet');
 
 exports.EnhancedSet = EnhancedSet;

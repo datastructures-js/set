@@ -237,4 +237,4 @@ class EnhancedSet extends Set {
   }
 }
 
-module.exports = EnhancedSet;
+exports.EnhancedSet = EnhancedSet;

@@ -4,14 +4,16 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/set.svg)](https://www.npmjs.com/package/@datastructures-js/set) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/set)
 
-extends javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">ES6 global Set</a> class and implements new functions in it.
+extends javascript ES6 global Set class and implements new functions in it.
+
+<img src="https://user-images.githubusercontent.com/6517308/121813242-859a9700-cc6b-11eb-99c0-49e5bb63005b.jpg">
 
 # Table of Contents
 * [Install](#install)
 * [require](#require)
 * [import](#import)
 * [API](#api)
-  * [Construction](#construction)
+  * [constructor](#constructor)
   * [.union(set)](#unionset)
   * [.intersect(set)](#intersectset)
   * [.complement(set)](#complementset)
@@ -46,12 +48,18 @@ import { EnhancedSet } from '@datastructures-js/set';
 
 ## API
 
-### Construction
-constructor accepts an optional array of elements same like Set.
+### constructor
 
+##### JS
 ```js
 const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
 const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
+```
+
+##### TS
+```js
+const set1 = new EnhancedSet<string>(['A', 'B', 'C', 'D']);
+const set2 = new EnhancedSet<string>(['C', 'D', 'E', 'F']);
 ```
 
 ### .union(set) 
@@ -64,8 +72,8 @@ applies <a href="https://en.wikipedia.org/wiki/Union_(set_theory)">union</a> wit
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td>
       O(n+m)
       <br />
@@ -90,8 +98,8 @@ applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">inters
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -114,8 +122,8 @@ finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">comple
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -139,7 +147,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">subset</a>
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
     <td align="center">boolean</td>
     <td align="center">
       O(n)
@@ -164,7 +172,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">superset</
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
     <td align="center">boolean</td>
     <td align="center">
       O(n)
@@ -190,11 +198,11 @@ applies <a href="https://en.wikipedia.org/wiki/Cartesian_product">cartesian prod
   </tr>
   <tr>
     <td align="center">
-      set: Set
+      set: Set&lt;any&gt;
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n*m)
       <br />
@@ -254,8 +262,6 @@ EnhancedSet {
 ### .power(m[, separator])
 applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
 
-<img width="450" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
-
 <table>
   <tr>
     <th align="center">params</th>
@@ -268,7 +274,7 @@ applies cartesian product on the set itself. It projects the power concept on se
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n^m)
       <br />
@@ -320,8 +326,6 @@ EnhancedSet(16) [Set] {
 ### .permutations(m[, separator])
 generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
 
-<img width="400" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
-
 <table>
   <tr>
     <th align="center">params</th>
@@ -334,7 +338,7 @@ generates m permutations from the set elements. It also accepts a separator with
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n^m)
       <br />
@@ -379,7 +383,7 @@ checks if two sets are equal.
   </tr>
   <tr>
     <td align="center">
-      set: Set
+      set: Set&lt;any&gt;
     </td>
     <td align="center">boolean</td>
     <td align="center">
@@ -406,9 +410,9 @@ filters the set based on a callback and returns the filtered set.
   </tr>
   <tr>
     <td align="center">
-      cb: function
+      cb: (element: T) => boolean
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -429,7 +433,7 @@ converts the set into an array.
   <th>return</th>
  </tr>
  <tr>
-  <td>array</td>
+  <td>T[]</td>
  </tr>
 </table>
 
@@ -445,7 +449,7 @@ clones the set.
   <th>return</th>
  </tr>
  <tr>
-  <td>EnhancedSet</td>
+  <td>EnhancedSet&lt;T&gt;</td>
  </tr>
 </table>
 
