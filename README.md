@@ -198,7 +198,7 @@ applies <a href="https://en.wikipedia.org/wiki/Cartesian_product">cartesian prod
   </tr>
   <tr>
     <td align="center">
-      set: Set
+      set: Set&lt;any&gt;
       <br />
       <i>separator: string</i>
     </td>
