@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const EnhancedSet = require('../src/enhancedSet');
+const { EnhancedSet } = require('../src/enhancedSet');
 
 describe('EnhancedSet unit tests', () => {
   const set1 = new EnhancedSet([1, 2, 3, 4]);
