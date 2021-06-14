@@ -72,7 +72,7 @@ applies <a href="https://en.wikipedia.org/wiki/Union_(set_theory)">union</a> wit
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set&lt;T&gt;</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
     <td align="center">EnhancedSet&lt;T&gt;</td>
     <td>
       O(n+m)
@@ -98,8 +98,8 @@ applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">inters
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -122,8 +122,8 @@ finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">comple
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -147,7 +147,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">subset</a>
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
     <td align="center">boolean</td>
     <td align="center">
       O(n)
@@ -172,7 +172,7 @@ checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">superset</
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
+    <td align="center">set: EnhancedSet&lt;T&gt;</td>
     <td align="center">boolean</td>
     <td align="center">
       O(n)
@@ -202,7 +202,7 @@ applies <a href="https://en.wikipedia.org/wiki/Cartesian_product">cartesian prod
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n*m)
       <br />
@@ -274,7 +274,7 @@ applies cartesian product on the set itself. It projects the power concept on se
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n^m)
       <br />
@@ -338,7 +338,7 @@ generates m permutations from the set elements. It also accepts a separator with
       <br />
       <i>separator: string</i>
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;string&gt;</td>
     <td>
       O(n^m)
       <br />
@@ -383,7 +383,7 @@ checks if two sets are equal.
   </tr>
   <tr>
     <td align="center">
-      set: Set
+      set: Set&lt;any&gt;
     </td>
     <td align="center">boolean</td>
     <td align="center">
@@ -410,9 +410,9 @@ filters the set based on a callback and returns the filtered set.
   </tr>
   <tr>
     <td align="center">
-      cb: function
+      cb: (element: T) => boolean
     </td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td align="center">
       O(n)
       <br />
@@ -433,7 +433,7 @@ converts the set into an array.
   <th>return</th>
  </tr>
  <tr>
-  <td>array</td>
+  <td>T[]</td>
  </tr>
 </table>
 
@@ -449,7 +449,7 @@ clones the set.
   <th>return</th>
  </tr>
  <tr>
-  <td>EnhancedSet</td>
+  <td>EnhancedSet&lt;T&gt;</td>
  </tr>
 </table>
 
