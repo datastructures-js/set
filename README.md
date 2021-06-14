@@ -11,7 +11,7 @@ extends javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScr
 * [require](#require)
 * [import](#import)
 * [API](#api)
-  * [Construction](#construction)
+  * [constructor](#constructor)
   * [.union(set)](#unionset)
   * [.intersect(set)](#intersectset)
   * [.complement(set)](#complementset)
@@ -46,12 +46,18 @@ import { EnhancedSet } from '@datastructures-js/set';
 
 ## API
 
-### Construction
-constructor accepts an optional array of elements same like Set.
+### constructor
 
+##### JS
 ```js
 const set1 = new EnhancedSet(['A', 'B', 'C', 'D']);
 const set2 = new EnhancedSet(['C', 'D', 'E', 'F']);
+```
+
+##### TS
+```js
+const set1 = new EnhancedSet<string>(['A', 'B', 'C', 'D']);
+const set2 = new EnhancedSet<string>(['C', 'D', 'E', 'F']);
 ```
 
 ### .union(set) 
@@ -64,8 +70,8 @@ applies <a href="https://en.wikipedia.org/wiki/Union_(set_theory)">union</a> wit
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">set: Set</td>
-    <td align="center">EnhancedSet</td>
+    <td align="center">set: Set&lt;T&gt;</td>
+    <td align="center">EnhancedSet&lt;T&gt;</td>
     <td>
       O(n+m)
       <br />
@@ -254,8 +260,6 @@ EnhancedSet {
 ### .power(m[, separator])
 applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
 
-<img width="450" alt="product" src="https://user-images.githubusercontent.com/6517308/101982951-0933e680-3c3d-11eb-88cf-2e99c1767173.png">
-
 <table>
   <tr>
     <th align="center">params</th>
@@ -319,8 +323,6 @@ EnhancedSet(16) [Set] {
 
 ### .permutations(m[, separator])
 generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
-
-<img width="400" alt="perms" src="https://user-images.githubusercontent.com/6517308/102668335-f3b64380-418b-11eb-9143-b9c4a72dea85.png">
 
 <table>
   <tr>
