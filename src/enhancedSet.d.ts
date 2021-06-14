@@ -27,7 +27,7 @@ export class EnhancedSet<T> extends Set<T> {
   product(set: Set<any>, separator?: string): EnhancedSet<string>;
   power(m: number, separator?: string): EnhancedSet<string>;
   permutations(m: number, separator?: string): EnhancedSet<string>;
-  equals(set: Set<any>): boolean;
+  equals(set: Set<T>): boolean;
   filter(cb: (element: T) => boolean): EnhancedSet<T>;
   toArray(): T[];
   clone(): EnhancedSet<T>;
