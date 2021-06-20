@@ -8,7 +8,7 @@ extends javascript ES6 global Set class and implements new functions in it.
 
 <img src="https://user-images.githubusercontent.com/6517308/121813242-859a9700-cc6b-11eb-99c0-49e5bb63005b.jpg">
 
-# Table of Contents
+# Contents
 * [Install](#install)
 * [require](#require)
 * [import](#import)
