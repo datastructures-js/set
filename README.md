@@ -14,18 +14,18 @@ extends javascript ES6 global Set class and implements new functions in it.
 * [import](#import)
 * [API](#api)
   * [constructor](#constructor)
-  * [.union(set)](#unionset)
-  * [.intersect(set)](#intersectset)
-  * [.complement(set)](#complementset)
-  * [.isSubsetOf(set)](#issubsetofset)
-  * [.isSupersetOf(set)](#issupersetofset)
-  * [.product(set[, separator])](#productset-separator)
-  * [.power(m[, separator])](#powerm-separator)
-  * [.permutations(m[, separator])](#permutationsm-separator)
-  * [.equals(set)](#equalsset)
-  * [.filter(cb)](#filtercb)
-  * [.toArray()](#toarray)
-  * [.clone()](#clone)
+  * [union](#union)
+  * [intersect](#intersect)
+  * [complement](#complement)
+  * [isSubsetOf](#issubsetof)
+  * [isSupersetOf](#issupersetof)
+  * [product](#product)
+  * [power](#power)
+  * [permutations](#permutations)
+  * [equals](#equals)
+  * [filter](#filter)
+  * [toArray](#toarray)
+  * [clone](#clone)
  * [Build](#build)
  * [License](#license)
 
@@ -62,156 +62,46 @@ const set1 = new EnhancedSet<string>(['A', 'B', 'C', 'D']);
 const set2 = new EnhancedSet<string>(['C', 'D', 'E', 'F']);
 ```
 
-### .union(set) 
+### union 
 applies <a href="https://en.wikipedia.org/wiki/Union_(set_theory)">union</a> with another set and returns a set with all elements of the two.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">set: EnhancedSet&lt;T&gt;</td>
-    <td align="center">EnhancedSet&lt;T&gt;</td>
-    <td>
-      O(n+m)
-      <br />
-      n = number of elements of the current set
-      <br />
-      m = number of elements of the input set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.union(set2)); // EnhancedSet { 'A', 'B', 'C', 'D', 'E', 'F' }
 ```
 
-### .intersect(set)
+### intersect
 applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">intersection</a> between the set and another set and returns the existing elements in both.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">set: EnhancedSet&lt;T&gt;</td>
-    <td align="center">EnhancedSet&lt;T&gt;</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of the current set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
-### .complement(set)
+### complement
 finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">complement</a> of a set from the set elements.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">set: EnhancedSet&lt;T&gt;</td>
-    <td align="center">EnhancedSet&lt;T&gt;</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of the current set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
 console.log(set2.complement(set1)); // EnhancedSet { 'E', 'F' }
 ```
 
-### .isSubsetOf(set)
+### isSubsetOf
 checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">subset</a> of another set and returns true if all elements of the set exist in the other set.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">set: EnhancedSet&lt;T&gt;</td>
-    <td align="center">boolean</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of current set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.isSubsetOf(new Set(['A', 'B', 'C', 'D', 'E']))); // true
 console.log(set1.isSubsetOf(set2)); // false
 ```
 
-### .isSupersetOf(set)
+### isSupersetOf
 checks if the set is a <a href="https://en.wikipedia.org/wiki/Subset">superset</a> of another set and returns true if all elements of the other set exist in the set.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">set: EnhancedSet&lt;T&gt;</td>
-    <td align="center">boolean</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of current set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.isSupersetOf(new Set(['A', 'B']))); // true
 console.log(set1.isSupersetOf(set2)); // false
 ```
 
-### .product(set[, separator])
+### product
 applies <a href="https://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> between two sets. Default separator is empty string ''. 
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">
-      set: Set&lt;any&gt;
-      <br />
-      <i>separator: string</i>
-    </td>
-    <td align="center">EnhancedSet&lt;string&gt;</td>
-    <td>
-      O(n*m)
-      <br />
-      n = number of elements of the current set
-      <br />
-      m = number of elements of the input set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.product(set2));
@@ -259,31 +149,8 @@ EnhancedSet {
 */
 ```
 
-### .power(m[, separator])
+### power
 applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">
-      m: number
-      <br />
-      <i>separator: string</i>
-    </td>
-    <td align="center">EnhancedSet&lt;string&gt;</td>
-    <td>
-      O(n^m)
-      <br />
-      n = number of elements of the set
-      <br />
-      m = the multiplication power number
-    </td>
-  </tr>
-</table>
 
 ```js
 const x = new EnhancedSet(['A', 'B']);
@@ -323,31 +190,8 @@ EnhancedSet(16) [Set] {
 */
 ```
 
-### .permutations(m[, separator])
-generates m permutations from the set elements. It also accepts a separator with default empty string value ''. 
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">
-      m: number
-      <br />
-      <i>separator: string</i>
-    </td>
-    <td align="center">EnhancedSet&lt;string&gt;</td>
-    <td>
-      O(n^m)
-      <br />
-      n = number of elements of the set
-      <br />
-      m = number of permutations
-    </td>
-  </tr>
-</table>
+### permutations
+generates m permutations from the set elements. It also accepts a second param as the separator, default is empty string ''.
 
 ```js
 const x = new EnhancedSet(['A', 'B', 'C', 'D']);
@@ -372,87 +216,30 @@ EnhancedSet(12) [Set] {
 */
 ```
 
-### .equals(set)
+### equals
 checks if two sets are equal.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">
-      set: Set&lt;any&gt;
-    </td>
-    <td align="center">boolean</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of the current set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.equals(new Set(['B', 'A', 'D', 'C']))); // true
 console.log(set1.equals(new EnhancedSet(['D', 'C']))); // false
 ```
 
-### .filter(cb)
+### filter
 filters the set based on a callback and returns the filtered set.
-
-<table>
-  <tr>
-    <th align="center">params</th>
-    <th align="center">return</th>
-    <th align="center">runtime</th>
-  </tr>
-  <tr>
-    <td align="center">
-      cb: (element: T) => boolean
-    </td>
-    <td align="center">EnhancedSet&lt;T&gt;</td>
-    <td align="center">
-      O(n)
-      <br />
-      n = number of elements of the set
-    </td>
-  </tr>
-</table>
 
 ```js
 console.log(set1.filter((el) => el > 'B')); // EnhancedSet { 'C', 'D' }
 ```
 
-### .toArray()
+### toArray
 converts the set into an array.
-
-<table>
- <tr>
-  <th>return</th>
- </tr>
- <tr>
-  <td>T[]</td>
- </tr>
-</table>
 
 ```js
 console.log(set1.toArray()); // [ 'A', 'B', 'C', 'D' ]
 ```
 
-### .clone()
+### clone
 clones the set.
-
-<table>
- <tr>
-  <th>return</th>
- </tr>
- <tr>
-  <td>EnhancedSet&lt;T&gt;</td>
- </tr>
-</table>
-
 
 ```js
 console.log(set1.clone()); // EnhancedSet { 'A', 'B', 'C', 'D' }
