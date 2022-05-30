@@ -77,7 +77,7 @@ console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
 ### complement (diff)
-finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">complement</a> of a set from the set elements.
+finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">complement</a> of another set from the set elements.
 
 ```js
 console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
