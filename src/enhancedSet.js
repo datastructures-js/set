@@ -66,6 +66,16 @@ class EnhancedSet extends Set {
   }
 
   /**
+   * Returns the elements in the set that are not in another set
+   * @public
+   * @param {Set} set
+   * @returns {EnhancedSet}
+   */
+  diff(set) {
+    return this.complement(set);
+  }
+
+  /**
    * Checks if the set is a subset of another set
    * @public
    * @param {Set} set

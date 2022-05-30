@@ -19,11 +19,12 @@ declare const Set: SetConstructor;
 
 export class EnhancedSet<T> extends Set<T> {
   constructor(elements?: T[]);
-  union(set: EnhancedSet<T>): EnhancedSet<T>;
-  intersect(set: EnhancedSet<T>): EnhancedSet<T>;
-  complement(set: EnhancedSet<T>): EnhancedSet<T>;
-  isSubsetOf(set: EnhancedSet<T>): boolean;
-  isSupersetOf(set: EnhancedSet<T>): boolean;
+  union(set: Set<T>): EnhancedSet<T>;
+  intersect(set: Set<T>): EnhancedSet<T>;
+  complement(set: Set<T>): EnhancedSet<T>;
+  diff(set: Set<T>): EnhancedSet<T>;
+  isSubsetOf(set: Set<T>): boolean;
+  isSupersetOf(set: Set<T>): boolean;
   product(set: Set<any>, separator?: string): EnhancedSet<string>;
   power(m: number, separator?: string): EnhancedSet<string>;
   permutations(m: number, separator?: string): EnhancedSet<string>;

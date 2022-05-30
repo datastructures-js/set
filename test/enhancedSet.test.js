@@ -5,7 +5,7 @@ describe('EnhancedSet unit tests', () => {
   const set1 = new EnhancedSet([1, 2, 3, 4]);
   const set2 = new EnhancedSet([3, 4, 5, 6]);
 
-  describe('.union(set)', () => {
+  describe('union', () => {
     it('union two sets', () => {
       const union = set1.union(set2);
       expect(union).to.be.instanceof(EnhancedSet);
@@ -24,7 +24,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.intersect(set)', () => {
+  describe('intersect', () => {
     it('intersects two sets', () => {
       const intersect = set1.intersect(set2);
       expect(intersect).to.be.instanceof(EnhancedSet);
@@ -39,10 +39,10 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.complement(set)', () => {
+  describe('complement (diff)', () => {
     it('complements a set', () => {
       const set1Complement = set2.complement(set1);
-      const set2Complement = set1.complement(set2);
+      const set2Complement = set1.diff(set2);
 
       expect(set2Complement).to.be.instanceof(EnhancedSet);
       expect(set2Complement.size).to.be.equal(2);
@@ -61,7 +61,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.isSubsetOf(set)', () => {
+  describe('isSubsetOf', () => {
     it('checks if the set is a subset of another set', () => {
       expect(set1.isSubsetOf(set2)).to.be.equal(false);
       expect(set2.isSubsetOf(set1)).to.be.equal(false);
@@ -73,7 +73,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.isSupersetOf(set)', () => {
+  describe('isSupersetOf', () => {
     it('checks if the set is a super set of another set', () => {
       expect(set1.isSupersetOf(set2)).to.be.equal(false);
       expect(set2.isSupersetOf(set1)).to.be.equal(false);
@@ -86,13 +86,13 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.toArray()', () => {
+  describe('toArray', () => {
     it('converts the set into an array', () => {
       expect(set1.toArray()).to.deep.equal([1, 2, 3, 4]);
     });
   });
 
-  describe('.product(set)', () => {
+  describe('product', () => {
     it('applies cortesian product on two sets with default separator', () => {
       const product = set1.product(set2);
       expect(product.size).to.equal(16);
@@ -141,7 +141,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.power(n, separator)', () => {
+  describe('power', () => {
     const s = new EnhancedSet(['0', '1']);
 
     it('throws an error when n is not a number', () => {
@@ -170,7 +170,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('permutations(m, separator)', () => {
+  describe('permutations', () => {
     const s = new EnhancedSet(['A', 'B', 'C']);
 
     it('throws an error when m is not a number', () => {
@@ -219,7 +219,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.equals()', () => {
+  describe('equals', () => {
     it('checks if two sets are equal', () => {
       expect(set1.equals(new Set([2, 4, 1, 3]))).to.equal(true);
       expect(set1.equals(new Set([4, 1, 3]))).to.equal(false);
@@ -231,7 +231,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.filter(cb)', () => {
+  describe('filter', () => {
     it('filters the set using a callback', () => {
       const filteredSet = set1.filter((el) => el > 2);
       expect(filteredSet.equals(new Set([3, 4]))).to.equal(true);
@@ -243,7 +243,7 @@ describe('EnhancedSet unit tests', () => {
     });
   });
 
-  describe('.clone()', () => {
+  describe('clone', () => {
     it('clones the set', () => {
       const set = new EnhancedSet(['A', 'B', 'C']);
       const clone = set.clone();
