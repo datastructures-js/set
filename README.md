@@ -16,7 +16,7 @@ extends javascript ES6 global Set class and implements new functions in it.
   * [constructor](#constructor)
   * [union](#union)
   * [intersect](#intersect)
-  * [complement](#complement)
+  * [complement (diff)](#complement-diff)
   * [isSubsetOf](#issubsetof)
   * [isSupersetOf](#issupersetof)
   * [product](#product)
@@ -76,12 +76,12 @@ applies <a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">inters
 console.log(set1.intersect(set2)); // EnhancedSet { 'C', 'D' }
 ```
 
-### complement
+### complement (diff)
 finds the <a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">complement</a> of a set from the set elements.
 
 ```js
 console.log(set1.complement(set2)); // EnhancedSet { 'A', 'B' }
-console.log(set2.complement(set1)); // EnhancedSet { 'E', 'F' }
+console.log(set2.diff(set1)); // EnhancedSet { 'E', 'F' }
 ```
 
 ### isSubsetOf
