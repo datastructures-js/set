@@ -150,7 +150,7 @@ EnhancedSet {
 ```
 
 ### power
-applies cartesian product on the set itself. It projects the power concept on sets and also accepts a separator with default empty string value ''. 
+applies cartesian product on the set itself and accepts a second param as a separator with default as empty string ''. 
 
 ```js
 const x = new EnhancedSet(['A', 'B']);
