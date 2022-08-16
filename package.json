@@ -3,6 +3,7 @@
   "version": "4.2.0",
   "description": "Enhanced Set that extends javascript ES6 Set",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "grunt test"
   },
